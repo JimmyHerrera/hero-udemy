@@ -12,4 +12,8 @@ class HeroController extends Controller
 
         return view('admin.heroes.index',['heroes'=>$heroes]);
     }
+
+    public function create(){
+        return view('admin.heroes.create');
+    }
 }
