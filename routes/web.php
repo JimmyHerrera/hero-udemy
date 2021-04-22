@@ -1,5 +1,9 @@
 <?php
+
 use App\Http\Controllers\adminController;
+use App\Http\Controllers\EnemyController;
+use App\Http\Controllers\HeroController;
+use App\Http\Controllers\ItemController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,4 +22,6 @@ Route::get('/', function () {
 });
 
 Route::get('/admin', [adminController::class, 'index']);
-
+Route::get('/admin/heroes', [HeroController::class, 'index'])->name('admin.heroes');
+Route::get('/admin/items', [ItemController::class, 'index'])->name('admin.items');
+Route::get('/admin/enemies', [EnemyController::class, 'index'])->name('admin.enemies');
