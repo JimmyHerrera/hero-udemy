@@ -21,7 +21,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/admin', [adminController::class, 'index'])->name('admin');
-Route::get('/admin/heroes', [HeroController::class, 'index'])->name('admin.heroes');
-Route::get('/admin/items', [ItemController::class, 'index'])->name('admin.items');
-Route::get('/admin/enemies', [EnemyController::class, 'index'])->name('admin.enemies');
+Route::prefix('admin')->group(function () {
+    Route::get('/', [adminController::class, 'index'])->name('admin');
+    Route::get('heroes', [HeroController::class, 'index'])->name('admin.heroes');
+    Route::get('items', [ItemController::class, 'index'])->name('admin.items');
+    Route::get('enemies', [EnemyController::class, 'index'])->name('admin.enemies');
+});
