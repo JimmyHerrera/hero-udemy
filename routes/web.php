@@ -27,3 +27,14 @@ Route::prefix('admin')->group(function () {
     Route::get('items', [ItemController::class, 'index'])->name('admin.items');
     Route::get('enemies', [EnemyController::class, 'index'])->name('admin.enemies');
 });
+
+/*
+$table->increments('id');
+$table->string('name');
+$table->integer('hp');
+$table->integer('atq');
+$table->integer('def');
+$table->integer('luck');
+$table->integer('coins');
+$table->integer('xp');
+*/
